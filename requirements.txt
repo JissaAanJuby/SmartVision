@@ -1,0 +1,9 @@
+# --- Web server / API ---
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0   # "standard" extra pulls in websockets + watchfiles, needed for /ws/* routes and --reload
+
+# --- Computer vision / ML ---
+opencv-python>=4.9.0
+mediapipe>=0.10.14          # FaceLandmarker with running_mode=VIDEO requires >=0.10.9
+numpy>=1.26.0,<2.0          # mediapipe wheels are currently built against numpy 1.x
+scipy>=1.12.0                # scipy.spatial.distance (EAR/MAR calculations in metrics.py)
